@@ -2,8 +2,6 @@
 Nifty Sensex Trends is a very simple and basic code to find average points nifty and sensex
 gained for last 2y, 5y, 10y and max. 
 
-The author 
-
 TL;DR: 
 Just look at nifty.txt and sensex.txt for results. 
 
