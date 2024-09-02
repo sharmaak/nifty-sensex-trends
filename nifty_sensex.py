@@ -5,7 +5,7 @@ def dig(index: str, duration_in_years: int):
 	
 	period = 'max' if duration_in_years <= 0 else f'{duration_in_years}y'
 	data = yf.download(index, interval='1mo', period=period, progress=False)
-	print(f"Period: {period}, Start Date: {data.index[0].strftime('%d-%m-%y')}, End Date: {data.index[len(data)-1].strftime('%d-%m-%y')}")
+	print(f"Period: {period} | Start Date: {data.index[0].strftime('%d-%m-%y')} | End Date: {data.index[len(data)-1].strftime('%d-%m-%y')}")
 
 	# 1. Calculate monthly average gain in points and percentage
 	data['Monthly_Gain'] = data['Close'] - data['Open']
@@ -36,7 +36,7 @@ def dig(index: str, duration_in_years: int):
 			else:
 				loss_count = loss_count + 1
 		profit_ratio = gain_count / (gain_count + loss_count)
-		print(f"{m}, {loss_count}/{(gain_count + loss_count)}, {round(average_gain, 2)}")
+		print(f"{m}, \"{loss_count}/{(gain_count + loss_count)}\", {round(average_gain, 2)}")
 	print('-----------------')
 
 
